@@ -20,13 +20,13 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+      - uses: derailed-dash/jekyll-deploy-action@v0.3.1
         with:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
           repository: ''             # Default is current repository
           branch: 'gh-pages'         # Default is gh-pages for github provider
-          jekyll_src: './docs/'      # Default is root directory
+          jekyll_src: './docs/'      # Default is root directory. The root of your Jekyll site, relative to your repo. E.g. './docs/'
           jekyll_cfg: '_config.yml'  # Default is _config.yml
           jekyll_baseurl: ''         # Default is according to _config.yml
           bundler_ver: '>=0'         # Default is latest bundler version
